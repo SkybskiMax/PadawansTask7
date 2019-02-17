@@ -10,9 +10,18 @@ namespace PadawansTask7
             {
                 throw new ArgumentNullException();
             }
-            if (array.Length==0)
+
+            if (array.Length == 0)
             {
                 throw new ArgumentException();
+            }
+
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i]==null)
+                {
+                    throw new ArgumentNullException();
+                }
             }
 
             Array.Sort(array, (x, y) => x.Length.CompareTo(y.Length));
